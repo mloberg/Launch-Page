@@ -4,7 +4,7 @@
 	
 	$email = $_POST['email'];
 	
-	if(preg_match('/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/', $email)){
+	if(preg_match('/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/', strtolower($email))){
 		preg_match('/-(\w*)$/', $mailchimp_api_key, $dc);
 		$mc = "http://{$dc[1]}.api.mailchimp.com/1.3/?method=listSubscribe&apikey={$mailchimp_api_key}&id={$mailchimp_list_id}&email_address={$email}";
 		if(!$mailchimp_confirmation){
@@ -29,5 +29,5 @@
 			}
 		}
 	}else{
-		echo '<p class="error">Please enter a valid email address.';
+		echo '<p class="error">Please enter a valid email address.</p>';
 	}
