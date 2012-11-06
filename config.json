@@ -5,5 +5,30 @@
 	"links": {
 		"Title": "url"
 	},
-	"copyright": "&copy; You 2012"
+	"info-block-1": [
+		"<h4>Subheading</h4>",
+		"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue.</p>",
+		"<h4>Subheading</h4>",
+		"<p>Mauris tincidunt ante sit amet nisl eleifend quis molestie lacus.</p>"
+	],
+	"info-block-2": [
+		"<h4>Subheading</h4>",
+		"<p>Vestibulum leo nulla, euismod quis fermentum id, eleifend at urna.</p>",
+		"<h4>Subheading</h4>",
+		"<p>Nullam vitae dui in quam accumsan vestibulum vel dapibus sem.</p>"
+	],
+	"copyright": "&copy; You 2012",
+	"footer-links": {
+		"Twitter": "http://twitter.com/mloberg"
+	},
+	"signup-button-text": "Sign Up",
+	"signup-text": "Sign Up For Our Newsletter",
+	"submit-text": "Submit",
+	"success-text": "",
+	"mailchimp": {
+		"api_key": "",
+		"list_id": "",
+		"confirmation": true,
+		"welcome_email": false
+	}
 }

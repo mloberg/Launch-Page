@@ -44,6 +44,22 @@
     .marketing p + h4 {
       margin-top: 28px;
     }
+
+    /* Submit form */
+    #signup legend {
+      text-align: center;
+    }
+
+    /* Footer navigation links */
+    .nav-footer > li {
+      float: left;
+    }
+    .nav-footer > li > a {
+      padding-right: 5px;
+      padding-left: 5px;
+      margin-right: 2px;
+      line-height: 14px;
+    }
   </style>
   <link href="css/bootstrap-responsive.css" rel="stylesheet">
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -57,7 +73,7 @@
       <ul class="nav nav-pills pull-right">
         <li class="active"><a href="index.php">Home</a></li>
         <?php foreach ($config['links'] as $title => $link): ?>
-        <li><a href="<?= $link;?>"><?= $title;?></a></li>
+          <li><a href="<?= $link;?>"><?= $title;?></a></li>
         <?php endforeach;?>
       </ul>
       <h3 class="muted"><?= $config['title'];?></h3>
@@ -68,104 +84,64 @@
     <div class="jumbotron">
       <h1><?= $config['heading'];?></h1>
       <p class="lead"><?= $config['description'];?></p>
-      <a class="btn btn-large btn-success" href="#">Sign up today</a>
+      <a class="btn btn-large btn-success" href="#signup"><?= $config['signup-button-text'];?></a>
     </div>
 
     <hr>
 
     <div class="row-fluid marketing">
       <div class="span6">
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        <?php foreach ($config['info-block-1'] as $content) { echo $content; } ?>
       </div>
 
       <div class="span6">
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        <?php foreach ($config['info-block-2'] as $content) { echo $content; } ?>
       </div>
+    </div>
+
+    <div id="signup">
+      <legend><?= $config['signup-text'];?></legend>
+      <form class="form-horizontal" id="signup-form">
+        <div class="control-group" id="email-group">
+          <label class="control-label" for="email">Email</label>
+          <div class="controls">
+            <input type="text" class="input-xlarge" id="email" name="email" placeholder="Required">
+            <span class="help-inline" id="email-help"></span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">First Name</label>
+          <div class="controls">
+            <input type="text" class="input-xlarge" placeholder="Optional">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Last Name</label>
+          <div class="controls">
+            <input type="text" class="input-xlarge" placeholder="Optional">
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <button type="submit" class="btn"><?= $config['submit-text'];?></button>
+          </div>
+        </div>
+      </form>
     </div>
 
     <hr>
 
     <div class="footer">
+      <ul class="nav nav-footer pull-right">
+        <?php foreach ($config['footer-links'] as $text => $link): ?>
+          <li><a href="<?= $link;?>"><?= $text;?></a></li>
+        <?php endforeach;?>
+      </ul>
       <p><?= $config['copyright'];?></p>
     </div>
 
   </div>
-<!--
-  <script src="../assets/js/jquery.js"></script>
-  <script src="../assets/js/bootstrap-transition.js"></script>
-  <script src="../assets/js/bootstrap-alert.js"></script>
-  <script src="../assets/js/bootstrap-modal.js"></script>
-  <script src="../assets/js/bootstrap-dropdown.js"></script>
-  <script src="../assets/js/bootstrap-scrollspy.js"></script>
-  <script src="../assets/js/bootstrap-tab.js"></script>
-  <script src="../assets/js/bootstrap-tooltip.js"></script>
-  <script src="../assets/js/bootstrap-popover.js"></script>
-  <script src="../assets/js/bootstrap-button.js"></script>
-  <script src="../assets/js/bootstrap-collapse.js"></script>
-  <script src="../assets/js/bootstrap-carousel.js"></script>
-  <script src="../assets/js/bootstrap-typeahead.js"></script>
--->
-</body>
-</html>
-
-<!--
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title></title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-</head>
-<body>
-<div id="box">
-	<img src="<?php echo $logo;?>" alt="logo" <?php echo $attr;?> />
-	<div id="content">
-		<p><?php echo $description;?></p>
-		<p class="signup"><?php echo $signup_text;?></p>
-	</div>
-	<form action="javascript:alert('An error has occured');">
-		<input type="text" id="email" name="email" value="email" />
-		<input type="submit" id="submit" value="<?php echo $button_text;?>" />
-	</form>
-	<div id="resp"></div>
-	<div id="social">
-		<?php if($twitter !== ''):?>
-		<a href="http://twitter.com/<?php echo $twitter;?>"><img src="img/twitter.png" alt="Twitter" width="32" height="32" /></a>
-		<?php endif;?>
-		<?php if($facebook !== ''):?>
-		<a href="<?php echo $facebook;?>"><img src="img/facebook.png" alt="Facebook" width="32" height="32" /></a>
-		<?php endif;?>
-		<?php if($blog !== ''):?>
-		<a href="<?php echo $blog;?>"><img src="img/blogger.png" alt="Blog" width="32" height="32" /></a>
-		<?php endif;?>
-		<?php if($website !== ''):?>
-		<a href="<?php echo $website;?>"><img src="img/website.png" alt="Website" width="32" height="32" /></a>
-		<?php endif;?>
-	</div>
-</div>
-<?php if($footer):?>
-<footer> 
-	<?php echo $footer_text;?> 
-</footer>
-<?php endif;?>
-<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.1/mootools-yui-compressed.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/launch.js"></script>
 </body>
 </html>
-
--->
