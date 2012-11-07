@@ -16,5 +16,22 @@ $(document).ready(function() {
 		$("#email-group").removeClass("error");
 		$("#email-help").text("");
 	});
-	$("#signup-form").submit(validateEmail);
+	$("#signup-form").submit(function() {
+		if (validateEmail()) {
+			// AJAX request
+			$.ajax({
+				type: 'POST',
+				url: 'submit.php',
+				data: {
+					'email': $("#email").val(),
+					'fname': $("#fname").val(),
+					'lname': $("#lname").val()
+				},
+				success: function(data) {
+					alert(data);
+				}
+			});
+		}
+		return false;
+	});
 });

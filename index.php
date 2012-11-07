@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       padding-top: 20px;
@@ -61,7 +61,7 @@
       line-height: 14px;
     }
   </style>
-  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -102,6 +102,7 @@
     <div id="signup">
       <legend><?= $config['signup-text'];?></legend>
       <form class="form-horizontal" id="signup-form">
+        <input type="hidden" name="nojs" value="1">
         <div class="control-group" id="email-group">
           <label class="control-label" for="email">Email</label>
           <div class="controls">
@@ -110,20 +111,21 @@
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label">First Name</label>
+          <label class="control-label" for="fname">First Name</label>
           <div class="controls">
-            <input type="text" class="input-xlarge" placeholder="Optional">
+            <input type="text" class="input-xlarge" id="fname" name="fname" placeholder="Optional">
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label">Last Name</label>
+          <label class="control-label" for="lname">Last Name</label>
           <div class="controls">
-            <input type="text" class="input-xlarge" placeholder="Optional">
+            <input type="text" class="input-xlarge" id="lname" name="lname" placeholder="Optional">
           </div>
         </div>
         <div class="control-group">
           <div class="controls">
             <button type="submit" class="btn"><?= $config['submit-text'];?></button>
+            <span class="help-inline" id="response"></span>
           </div>
         </div>
       </form>
