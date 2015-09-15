@@ -1,4 +1,4 @@
-<?php $config = json_decode(file_get_contents('config.json'), true);?>
+<?php $config = array_merge_recursive(json_decode(file_get_contents('config.json'), true), json_decode(file_get_contents('secret.json'), true));?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

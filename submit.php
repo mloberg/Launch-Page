@@ -2,7 +2,7 @@
 
 require 'MCAPI.class.php';
 
-$config = json_decode(file_get_contents('config.json'), true);
+$config = array_merge_recursive(json_decode(file_get_contents('config.json'), true), json_decode(file_get_contents('secret.json'), true));
 
 $api = new MCAPI($config['mailchimp']['api_key']);
 
