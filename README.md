@@ -4,7 +4,7 @@ Launching a product or service soon? Use Launch Page to collect email addresses 
 
 ## Installation
 
-Clone this repo, modify config.json with your details, and boom, you're ready to go.
+Clone this repo, modify config.json with page details, copy/rename secret.json.dist to secret.json, add API keys to secret.json, and boom, you're ready to go.
 
 ## Looking For The Old Version?
 

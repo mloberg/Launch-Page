@@ -24,9 +24,5 @@
 	"signup-button-text": "Sign Up",
 	"signup-text": "Sign Up For Our Newsletter",
 	"submit-text": "Submit",
-	"success-text": "Thank you for signing up. You will be receiving a confirmation email shortly.",
-	"mailchimp": {
-		"api_key": "",
-		"list_id": ""
-	}
+	"success-text": "Thank you for signing up. You will be receiving a confirmation email shortly."
 }
