@@ -160,6 +160,7 @@ return [
          * Third Party Service Providers...
          */
         TwigBridge\ServiceProvider::class,
+        Spatie\Newsletter\NewsletterServiceProvider::class,
 
     ],
 
@@ -207,7 +208,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
-        'Twig'      => TwigBridge\Facade\Twig::class,
+        'Twig'       => TwigBridge\Facade\Twig::class,
+        'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
 
     ],
 
